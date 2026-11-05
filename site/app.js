@@ -20,7 +20,7 @@ function barChart(el, rows, baseline, opts = {}) {
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(opts.aria || "")}">`;
   for (const t of [0, .25, .5, .75, 1]) {
     s += `<line class="gridl" x1="${x(t)}" x2="${x(t)}" y1="${top}" y2="${H - 20}"/>`;
-    s += `<text x="${x(t)}" y="${H - 4}" text-anchor="middle" font-size="11">${pct(t)}%</text>`;
+    s += `<text x="${x(t)}" y="${H - 4}" text-anchor="middle" font-size="11">%${pct(t)}</text>`;
   }
   rows.forEach((r, i) => {
     const y = top + i * rowH, bh = Math.min(14, rowH - 12), by = y + (rowH - bh) / 2;
