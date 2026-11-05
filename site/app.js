@@ -1,6 +1,7 @@
 "use strict";
+const lab = (m) => m.name + (m.source === "meta" ? " · API" : "");
 const $ = (s) => document.querySelector(s);
-const pct = (x, d = 0) => (100 * x).toLocaleString("tr-TR", { maximumFractionDigits: d, minimumFractionDigits: d });
+const pct = (x, d = 0) => { const s = (100 * x).toLocaleString("tr-TR", { maximumFractionDigits: d, minimumFractionDigits: d }); return /^-0(,0+)?$/.test(s) ? s.slice(1) : s; };
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const NS = "http://www.w3.org/2000/svg";
 const tip = $("#tip");
@@ -14,11 +15,11 @@ function hideTip() { tip.hidden = true; }
 
 // Yatay çubuk + güven aralığı. rows: [{label, acc, lo, hi, n}]
 function barChart(el, rows, baseline, opts = {}) {
-  const W = Math.max(300, Math.round(el.clientWidth || 640)), rowH = opts.rowH || 30, left = Math.min(opts.left || 120, Math.round(W * 0.34)), right = 54, top = 6;
+  const W = Math.max(300, Math.round(el.clientWidth || 640)), rowH = opts.rowH || 30, left = Math.min(opts.left || 120, Math.round(W * 0.46)), right = 54, top = 6;
   const H = top + rows.length * rowH + 22;
   const x = (v) => left + v * (W - left - right);
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(opts.aria || "")}">`;
-  for (const t of [0, .25, .5, .75, 1]) {
+  for (const t of (W - left - right < 260 ? [0, .5, 1] : [0, .25, .5, .75, 1])) {
     s += `<line class="gridl" x1="${x(t)}" x2="${x(t)}" y1="${top}" y2="${H - 20}"/>`;
     s += `<text x="${x(t)}" y="${H - 4}" text-anchor="middle" font-size="11">%${pct(t)}</text>`;
   }
@@ -52,7 +53,7 @@ function render(R, S, Q) {
   const M = R.models, meta = R.meta, cats = Object.keys(meta.categories);
   const name = Object.fromEntries(M.map((m) => [m.id, m.name]));
   const best = M[0], worst = M[M.length - 1];
-  $("#lede").innerHTML = `Wikidata'dan otomatik üretilen ${meta.n_items.toLocaleString("tr-TR")} soruyla ${M.length} açık modeli bu bilgisayarda sınadık. ` +
+  $("#lede").innerHTML = `Wikidata'dan otomatik üretilen ${meta.n_items.toLocaleString("tr-TR")} soruyla ${M.length} modeli sınadık: ${M.filter((m) => m.source === "ollama").length} tanesi bu bilgisayarda yerel, ${M.filter((m) => m.source === "meta").length} tanesi Meta Model API üzerinden. ` +
     `En iyisi <b>${esc(best.name)}</b>: %${pct(best.macro.acc)} (rastgele tahmin %${pct(meta.baseline_macro)}). ` +
     `En zayıfı ${esc(worst.name)}: %${pct(worst.macro.acc)}.`;
 
@@ -73,7 +74,7 @@ function render(R, S, Q) {
 
 function redraw(R) {
   const M = R.models, meta = R.meta, cats = Object.keys(meta.categories);
-  barChart($("#board"), M.map((m) => ({ label: m.name, ...m.macro })), meta.baseline_macro, { left: 112, aria: "Model sıralaması" });
+  barChart($("#board"), M.map((m) => ({ label: lab(m), ...m.macro })), meta.baseline_macro, { left: 170, aria: "Model sıralaması" });
   const cg = $("#cats"); cg.innerHTML = "";
   for (const c of cats) {
     const info = meta.categories[c];
@@ -81,8 +82,8 @@ function redraw(R) {
     const n = info.public + info.heldout;
     d.innerHTML = `<h3>${esc(info.label)}</h3><p class="note">${n} soru · şans tabanı %${pct(info.baseline, 1)}</p><div class="chart"></div>`;
     cg.appendChild(d);
-    const rows = M.map((m) => ({ label: m.name, ...m.cats[c] })).sort((a, b) => b.acc - a.acc);
-    barChart(d.querySelector(".chart"), rows, info.baseline, { rowH: 26, left: 112, aria: info.label });
+    const rows = M.map((m) => ({ label: lab(m), ...m.cats[c] })).sort((a, b) => b.acc - a.acc);
+    barChart(d.querySelector(".chart"), rows, info.baseline, { rowH: 26, left: 170, aria: info.label });
   }
 }
 
@@ -91,15 +92,16 @@ function renderRest(R, S, Q, name) {
 
   // sağlamlık tablosu
   let t = `<thead><tr><th>Model</th><th>İki ifade de doğru</th><th>Yalnız biri doğru</th><th>1. ifade</th><th>2. ifade</th><th>Fark (GA)</th>` +
-    `<th>4 şıkta en sık harf</th><th>Doğru şık A/B/C/D iken başarı</th><th>2 şıkta “A” oranı</th><th>Biçim hatası</th><th>Ret</th><th>Açık / saklı bölüm</th></tr></thead><tbody>`;
+    `<th>4 şıkta en sık harf</th><th>Doğru şık A/B/C/D iken başarı</th><th>2 şıkta “A” oranı</th><th>Biçim hatası</th><th>Ret</th><th>Saklı bölüm (yalnız yerel)</th><th>2. tekrar (uyum)</th></tr></thead><tbody>`;
   for (const m of M) {
     const L = Object.entries(m.letters4).sort((a, b) => b[1] - a[1])[0];
-    t += `<tr><td>${esc(m.name)}</td><td>%${pct(m.consistency.both)}</td><td>%${pct(m.consistency.one)}</td>` +
+    t += `<tr><td>${esc(lab(m))}</td><td>%${pct(m.consistency.both)}</td><td>%${pct(m.consistency.one)}</td>` +
       `<td>%${pct(m.wording.v0)}</td><td>%${pct(m.wording.v1)}</td>` +
       `<td>${m.wording.diff >= 0 ? "+" : ""}${pct(m.wording.diff, 1)} (${pct(m.wording.lo, 1)}…${pct(m.wording.hi, 1)})${m.wording.sig ? "" : " ·"}</td>` +
       `<td>${L[0]} (%${pct(L[1])})</td><td>${"ABCD".split("").map((k) => pct(m.pos_acc4[k])).join(" / ")}</td><td>%${pct(m.pickA2)}</td>` +
       `<td>%${pct(m.status.format, 1)}</td><td>%${pct(m.status.refusal, 1)}</td>` +
-      `<td>%${pct(m.split.public)} / %${pct(m.split.heldout)}</td></tr>`;
+      `<td>${m.heldout ? "%" + pct(m.heldout.acc) : "—"}</td>` +
+      `<td>${m.repeat ? `%${pct(m.repeat.acc2)} (%${pct(m.repeat.agree)})` : "—"}</td></tr>`;
   }
   $("#robust").innerHTML = t + "</tbody>";
   $("#robustnotes").innerHTML = [
@@ -123,7 +125,12 @@ function renderRest(R, S, Q, name) {
       `<p class="note" style="margin:0 0 6px">Doğru cevap: <b>${esc(s.answer)}</b></p><ul>${mm}</ul></div>`;
   }).join("");
 
+  const D = R.disputed || [];
+  $("#disputed").innerHTML = D.length ? `<thead><tr><th>Kategori</th><th>Soru</th><th>Wikidata cevabı</th><th>API modelleri çoğunlukla</th><th>Yanlış sayılan</th></tr></thead><tbody>` +
+    D.map((d) => `<tr><td>${esc(meta.categories[d.cat].label)}</td><td style="text-align:left;white-space:normal">${esc(d.q)}</td><td>${esc(d.gold)}</td><td>${esc(d.api_said)}</td><td>${d.n_wrong} / ${d.n_api}</td></tr>`).join("") + "</tbody>"
+    : "<tbody><tr><td>Yok</td></tr></tbody>";
   quiz(Q, name);
+  R_AUX = R.aux || [];
   method(meta, M);
   let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => redraw(R), 150); });
 }
@@ -169,6 +176,7 @@ function quiz(Q, name) {
   start();
 }
 
+let R_AUX = [];
 function method(meta, M) {
   const c = meta.categories;
   $("#method").innerHTML = `
@@ -178,14 +186,15 @@ Yalnızca tek ve tutarlı değeri olan kayıtlar kullanıldı: aynı adlı ilçe
 Nüfus karşılaştırmasında her ilin Wikidata'daki en son tarihli nüfus kaydı kullanıldı (çoğunlukla 2021); nüfusları %15'ten yakın iller ve önceki kayıtta sırası ters olan çiftler atıldı. Rakımda farkı 200 metreden az şehir çiftleri atıldı.
 Plaka kodu sorularının yarısı serbest yanıtlı (sayı yazılır), geri kalan her şey 2 ya da 4 şıklı.</p>
 <h3>Modeller</h3>
-<p>${M.map((m) => `${esc(m.name)} (${esc(m.note)})`).join("; ")}. Hepsi Ollama ile, sıcaklık 0, tek tek, bir RTX 3060 (12 GB) üzerinde çalıştırıldı. Qwen tabanlı modellerde “düşünme” kapatıldı. Her soruya aynı Türkçe sistem istemi verildi: yalnızca harfi ya da sayıyı yaz.</p>
+<div class="tablewrap"><table><thead><tr><th>Model</th><th>Kaynak</th><th>Tam model kimliği</th><th>Tarih</th><th>Not</th></tr></thead><tbody>${M.concat(R_AUX).map((m) => `<tr><td>${esc(m.name)}</td><td>${esc(m.source_label)}</td><td><code>${esc(m.model_id)}</code></td><td>${esc(m.date)}</td><td style="text-align:left;white-space:normal">${esc(m.note)}</td></tr>`).join("")}</tbody></table></div>
+<p>Yerel modeller Ollama ile, sıcaklık 0, tek tek, bir RTX 3060 (12 GB) üzerinde çalıştırıldı; Qwen tabanlılarda “düşünme” kapatıldı. Meta modelleri Meta Model API (OpenAI uyumlu uç) üzerinden sıcaklık 0 ve varsayılan akıl yürütme düzeyiyle çağrıldı; bu modeller yanıt vermeden önce gizli akıl yürütme yapıyor${meta.meta_spend ? ` (toplam harcama ${meta.meta_spend.usd.toLocaleString("tr-TR")} $, ${meta.meta_spend.calls.toLocaleString("tr-TR")} istek)` : ""}. Meta'nın katkı (“contributor”) katmanında gönderilen içerik Meta tarafından kullanılabildiği için saklı bölüm hiçbir Meta modeline gönderilmedi; bu yüzden sıralama ve tüm karşılaştırmalar herkes için aynı ${meta.n_items.toLocaleString("tr-TR")} açık soru üzerinden yapıldı. Her soruya aynı Türkçe sistem istemi verildi: yalnızca harfi ya da sayıyı yaz.</p>
 <h3>Puanlama ve istatistik</h3>
 <p>Yanıt deterministik olarak çözümlendi: baştaki harf, “Cevap: B” kalıbı ya da tek bir seçenek metniyle birebir eşleşme. Hiçbiri yoksa yanıt “biçim hatası” (ya da “bilmiyorum” gibi ifadeler varsa “ret”) sayıldı ve yanlış kabul edildi.
 Bir sorunun puanı iki ifadesinin ortalamasıdır; güven aralıkları sorular üzerinde 10.000 tekrarlı yüzdelik bootstrap ile, genel puanda kategori içinde yeniden örnekleyerek hesaplandı. Model farkları aynı sorular üzerinde eşleştirilmiş bootstrap ile sınandı.</p>
 <h3>Sınırlar</h3>
 <ul>
 <li>Doğru cevap Wikidata'nın söylediğidir. Wikidata hatasızsa değil: yukarıdaki plaka örneği gibi yakaladığımız çelişkiler atıldı, yakalayamadıklarımız sorularda kalmış olabilir. Rakım değerleri ölçüm noktasına göre değişir.</li>
-<li>Ölçülen şey “küçük, yerel çalışan açık modeller”dir. Büyük ticari modeller (ücretli ya da anahtar gerektiren) bu turda yok.</li>
+<li>Yerel modeller küçük (3–14 milyar parametre) ve akıl yürütmesiz; Meta modelleri akıl yürütmeli ve çok daha büyük. Aradaki fark yalnız bilgi değil, düşünme süresi farkıdır da. OpenAI, Anthropic, Google gibi başka ticari modeller bu turda yok.</li>
 <li>Çoktan seçmeli biçim bilgiyi olduğundan iyi gösterebilir: yanlış şıklar rastgele seçildiği için bazen eleme ile bulunabilir.</li>
 <li>Doğum yılı sorusu, Türkçe Vikipedi maddesi olan ve en çok dilde maddesi bulunan kişilerden seçildi; listede sporcular ağırlıkta.</li>
 <li>Tek bir istem kalıbı kullanıldı; başka istemler ya da birkaç örnekli (few-shot) sorma puanları değiştirebilir.</li>

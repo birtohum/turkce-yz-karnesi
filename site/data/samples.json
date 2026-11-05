@@ -8,6 +8,30 @@
    "Çanakkale"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "B",
     "status": "correct"
@@ -35,6 +59,30 @@
    "Mersin"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "B",
     "status": "correct"
@@ -62,6 +110,30 @@
    "Muğla"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A",
     "status": "correct"
@@ -91,6 +163,30 @@
    "Erzincan"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A) Mardin",
     "status": "wrong"
@@ -120,6 +216,30 @@
    "Kars"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A",
     "status": "wrong"
@@ -149,6 +269,30 @@
    "Şanlıurfa"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "C",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A",
     "status": "wrong"
@@ -178,6 +322,30 @@
    "Bursa"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "C",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A) Kahramanmaraş",
     "status": "wrong"
@@ -207,6 +375,30 @@
    "Afyonkarahisar"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "D) Afyonkarahisar",
     "status": "wrong"
@@ -236,6 +428,30 @@
    "Bayburt"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "",
+    "status": "format"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "D) Bayburt",
     "status": "wrong"
@@ -263,6 +479,30 @@
    "Eskişehir"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A",
     "status": "correct"
@@ -290,6 +530,30 @@
    "Denizli"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "B",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "B",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "B",
     "status": "correct"
@@ -317,6 +581,30 @@
    "Zonguldak"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A",
     "status": "correct"
@@ -346,6 +634,30 @@
    "Erzurum"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "D",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A",
     "status": "wrong"
@@ -375,6 +687,30 @@
    "Muş"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A",
     "status": "correct"
@@ -404,6 +740,30 @@
    "Bayburt"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "A",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "A",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "D) Bayburt",
     "status": "wrong"
@@ -433,6 +793,30 @@
    "1931"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "D",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "D",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "D) 1931",
     "status": "correct"
@@ -462,6 +846,30 @@
    "1971"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "C",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A) 1987",
     "status": "wrong"
@@ -491,6 +899,30 @@
    "1967"
   ],
   "models": {
+   "meta_muse-wonder-1.0": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.1": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2-contributor": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.2": {
+    "out": "C",
+    "status": "correct"
+   },
+   "meta_muse-spark-1.3-contributor": {
+    "out": "C",
+    "status": "correct"
+   },
    "qwen3_14b": {
     "out": "A",
     "status": "wrong"

@@ -7,3 +7,7 @@ results/raw/
 results/queue.log
 .claude/
 results/queue2.log
+*.env
+.pflow-anahtarlar.env
+results/meta_harcama.jsonl
+results/meta_queue.log
