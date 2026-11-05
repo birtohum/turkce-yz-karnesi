@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Türkçe Yapay Zekâ Karnesi</title>
+<meta name="description" content="Yapay zekâ modelleri Türkiye'ye özgü bilgileri ne kadar biliyor? Wikidata'dan üretilmiş 1.479 soruyla ölçülmüş, güven aralıklı bir karne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap hero">
+  <p class="kicker">Türkçe yapay zekâ karnesi</p>
+  <h1>Yapay zekâ Türkiye'yi ne kadar tanıyor?</h1>
+  <p class="lede" id="lede">Yükleniyor…</p>
+</header>
+
+<main class="wrap">
+  <section id="sira">
+    <h2>Sıralama</h2>
+    <p class="note">Altı kategorinin eşit ağırlıklı ortalaması. Çizgiler %95 bootstrap güven aralığı; kesikli çizgi rastgele tahminle beklenen puan.</p>
+    <div id="board" class="chart"></div>
+    <div id="sig" class="note"></div>
+    <h3 class="sub">Öne çıkanlar</h3>
+    <ul class="find">
+      <li><b>Hiçbiri iyi değil.</b> En iyi model (Qwen3 14B) soruların yarısını biliyor; rastgele tahmin üçte birini bilirdi.</li>
+      <li><b>Karşılaştırma kolay, ezber zor.</b> “Hangi ilin nüfusu fazla, hangi şehir daha yüksekte” sorularında en iyi model %81–82'de. Bir gölün hangi ilde olduğu ya da ünlü birinin doğum yılında modeller şansa yakın (%29–39, şans %25). Plaka kodunu en iyi model bile beşte bir oranında biliyor.</li>
+      <li><b>Büyük model her yerde kazanmıyor.</b> İlçe sorularında 4 milyar parametreli Gemma 3 (%60), 14 milyarlık Qwen3'ü (%47) geçiyor. Genel puanda Gemma 3 4B ile Qwen3 8B arasındaki fark anlamlı değil.</li>
+      <li><b>Şık sırası sonucu değiştiriyor.</b> Qwen3 14B dört şıklı sorularda doğru cevap A iken %76, başka bir harfteyken %22–27 başarılı: A'yı seçmeye eğilimli ve diğer konumlarda neredeyse şans düzeyinde. Bir sorunun iki ifadesini de doğru bildiği oran yalnızca %39.</li>
+    </ul>
+  </section>
+
+  <section id="kategoriler">
+    <h2>Kategorilere göre</h2>
+    <div id="cats" class="grid"></div>
+  </section>
+
+  <section id="dene">
+    <h2>Kendin dene</h2>
+    <p class="note">Açık bölümden rastgele 10 çoktan seçmeli soru. Sonunda aynı 10 soruda modellerin kaç tane bildiğini görürsün. Yanıtların hiçbir yere gönderilmez.</p>
+    <div id="quiz" class="quiz"></div>
+  </section>
+
+  <section id="ornekler">
+    <h2>Örnek sorular ve yanıtlar</h2>
+    <p class="note">Her kategoriden üç soru; modelin ham çıktısı ve puanı. ✓ doğru, ✗ yanlış, “biçim” geçerli bir seçenek harfi yazılmadığı anlamına gelir.</p>
+    <div id="samples"></div>
+  </section>
+
+  <section id="saglamlik">
+    <h2>Sağlamlık kontrolleri</h2>
+    <p class="note">Her soru iki kez soruldu: ikinci seferde farklı bir ifadeyle (nüfus ve rakımda ters soruyla: “hangisi daha az / daha alçak”) ve doğru seçenek başka bir konumda.</p>
+    <div class="tablewrap"><table id="robust"></table></div>
+    <ul class="note" id="robustnotes"></ul>
+  </section>
+
+  <section id="yontem">
+    <h2>Yöntem ve sınırlar</h2>
+    <div class="prose" id="method"></div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Sorular <a href="https://www.wikidata.org/">Wikidata</a> verisinden (CC0) üretildi. Kod ve veri: <a href="https://github.com/birtohum/turkce-yz-karnesi">github.com/birtohum/turkce-yz-karnesi</a> (Apache-2.0). <a href="https://birtohum.github.io/">birtohum</a></p>
+</footer>
+<div id="tip" class="tip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+[
+ {
+  "cat": "nufus",
+  "prompt": "Hangi ilin nüfusu daha fazladır?\nA) Ardahan\nB) Çanakkale",
+  "answer": "B",
+  "choices": [
+   "Ardahan",
+   "Çanakkale"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "B",
+    "status": "correct"
+   },
+   "gemma3_4b": {
+    "out": "B",
+    "status": "correct"
+   },
+   "qwen3_8b": {
+    "out": "B",
+    "status": "correct"
+   },
+   "llama3.2_3b": {
+    "out": "B) Çanakkale",
+    "status": "correct"
+   }
+  }
+ },
+ {
+  "cat": "nufus",
+  "prompt": "Hangi ilin nüfusu daha fazladır?\nA) Burdur\nB) Mersin",
+  "answer": "B",
+  "choices": [
+   "Burdur",
+   "Mersin"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "B",
+    "status": "correct"
+   },
+   "gemma3_4b": {
+    "out": "B",
+    "status": "correct"
+   },
+   "qwen3_8b": {
+    "out": "B",
+    "status": "correct"
+   },
+   "llama3.2_3b": {
+    "out": "B) Mersin",
+    "status": "correct"
+   }
+  }
+ },
+ {
+  "cat": "nufus",
+  "prompt": "Hangi ilin nüfusu daha fazladır?\nA) Mersin\nB) Muğla",
+  "answer": "A",
+  "choices": [
+   "Mersin",
+   "Muğla"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A",
+    "status": "correct"
+   },
+   "gemma3_4b": {
+    "out": "A",
+    "status": "correct"
+   },
+   "qwen3_8b": {
+    "out": "B",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "B) Muğla",
+    "status": "wrong"
+   }
+  }
+ },
+ {
+  "cat": "ilce",
+  "prompt": "Horasan ilçesi hangi ile bağlıdır?\nA) Mardin\nB) Erzurum\nC) Sinop\nD) Erzincan",
+  "answer": "B",
+  "choices": [
+   "Mardin",
+   "Erzurum",
+   "Sinop",
+   "Erzincan"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A) Mardin",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "qwen3_8b": {
+    "out": "D) Erzincan",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "B) Erzurum",
+    "status": "correct"
+   }
+  }
+ },
+ {
+  "cat": "ilce",
+  "prompt": "Terme ilçesi hangi ile bağlıdır?\nA) Rize\nB) Samsun\nC) Antalya\nD) Kars",
+  "answer": "B",
+  "choices": [
+   "Rize",
+   "Samsun",
+   "Antalya",
+   "Kars"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "B",
+    "status": "correct"
+   },
+   "qwen3_8b": {
+    "out": "B) Samsun",
+    "status": "correct"
+   },
+   "llama3.2_3b": {
+    "out": "A) Rize",
+    "status": "wrong"
+   }
+  }
+ },
+ {
+  "cat": "ilce",
+  "prompt": "Kelkit ilçesi hangi ile bağlıdır?\nA) Artvin\nB) Van\nC) Gümüşhane\nD) Şanlıurfa",
+  "answer": "C",
+  "choices": [
+   "Artvin",
+   "Van",
+   "Gümüşhane",
+   "Şanlıurfa"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "qwen3_8b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "C) Gümüşhane",
+    "status": "correct"
+   }
+  }
+ },
+ {
+  "cat": "plaka",
+  "prompt": "Plaka kodu 74 olan il hangisidir?\nA) Kahramanmaraş\nB) Aydın\nC) Bartın\nD) Bursa",
+  "answer": "C",
+  "choices": [
+   "Kahramanmaraş",
+   "Aydın",
+   "Bartın",
+   "Bursa"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A) Kahramanmaraş",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "C",
+    "status": "correct"
+   },
+   "qwen3_8b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "C) Bartın",
+    "status": "correct"
+   }
+  }
+ },
+ {
+  "cat": "plaka",
+  "prompt": "Plaka kodu 66 olan il hangisidir?\nA) Yozgat\nB) Çanakkale\nC) Denizli\nD) Afyonkarahisar",
+  "answer": "A",
+  "choices": [
+   "Yozgat",
+   "Çanakkale",
+   "Denizli",
+   "Afyonkarahisar"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "D) Afyonkarahisar",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "C",
+    "status": "wrong"
+   },
+   "qwen3_8b": {
+    "out": "C) Denizli",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "A) Yozgat",
+    "status": "correct"
+   }
+  }
+ },
+ {
+  "cat": "plaka",
+  "prompt": "Plaka kodu 56 olan il hangisidir?\nA) Karabük\nB) Siirt\nC) Kars\nD) Bayburt",
+  "answer": "B",
+  "choices": [
+   "Karabük",
+   "Siirt",
+   "Kars",
+   "Bayburt"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "D) Bayburt",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "B",
+    "status": "correct"
+   },
+   "qwen3_8b": {
+    "out": "C) Kars",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "D) Bayburt",
+    "status": "wrong"
+   }
+  }
+ },
+ {
+  "cat": "rakim",
+  "prompt": "Hangi şehir merkezi deniz seviyesinden daha yüksektedir?\nA) Muş\nB) Eskişehir",
+  "answer": "A",
+  "choices": [
+   "Muş",
+   "Eskişehir"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A",
+    "status": "correct"
+   },
+   "gemma3_4b": {
+    "out": "A",
+    "status": "correct"
+   },
+   "qwen3_8b": {
+    "out": "A) Muş",
+    "status": "correct"
+   },
+   "llama3.2_3b": {
+    "out": "B) Eskişehir",
+    "status": "wrong"
+   }
+  }
+ },
+ {
+  "cat": "rakim",
+  "prompt": "Hangi şehir merkezi deniz seviyesinden daha yüksektedir?\nA) Ordu\nB) Denizli",
+  "answer": "B",
+  "choices": [
+   "Ordu",
+   "Denizli"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "B",
+    "status": "correct"
+   },
+   "gemma3_4b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "qwen3_8b": {
+    "out": "A) Ordu",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "B) Denizli",
+    "status": "correct"
+   }
+  }
+ },
+ {
+  "cat": "rakim",
+  "prompt": "Hangi şehir merkezi deniz seviyesinden daha yüksektedir?\nA) Yozgat\nB) Zonguldak",
+  "answer": "A",
+  "choices": [
+   "Yozgat",
+   "Zonguldak"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A",
+    "status": "correct"
+   },
+   "gemma3_4b": {
+    "out": "B",
+    "status": "wrong"
+   },
+   "qwen3_8b": {
+    "out": "A) Yozgat",
+    "status": "correct"
+   },
+   "llama3.2_3b": {
+    "out": "B) Zonguldak",
+    "status": "wrong"
+   }
+  }
+ },
+ {
+  "cat": "gol",
+  "prompt": "Tortum Gölü hangi ilin sınırları içindedir?\nA) Artvin\nB) Aydın\nC) İstanbul\nD) Erzurum",
+  "answer": "D",
+  "choices": [
+   "Artvin",
+   "Aydın",
+   "İstanbul",
+   "Erzurum"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "qwen3_8b": {
+    "out": "D) Erzurum",
+    "status": "correct"
+   },
+   "llama3.2_3b": {
+    "out": "A) Artvin",
+    "status": "wrong"
+   }
+  }
+ },
+ {
+  "cat": "gol",
+  "prompt": "Taşkısığı Gölü hangi ilin sınırları içindedir?\nA) Sakarya\nB) Gümüşhane\nC) Osmaniye\nD) Muş",
+  "answer": "A",
+  "choices": [
+   "Sakarya",
+   "Gümüşhane",
+   "Osmaniye",
+   "Muş"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A",
+    "status": "correct"
+   },
+   "gemma3_4b": {
+    "out": "A",
+    "status": "correct"
+   },
+   "qwen3_8b": {
+    "out": "C) Osmaniye",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "B) Gümüşhane",
+    "status": "wrong"
+   }
+  }
+ },
+ {
+  "cat": "gol",
+  "prompt": "Gökpınar gölü hangi ilin sınırları içindedir?\nA) Sivas\nB) Van\nC) Amasya\nD) Bayburt",
+  "answer": "A",
+  "choices": [
+   "Sivas",
+   "Van",
+   "Amasya",
+   "Bayburt"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "D) Bayburt",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "B",
+    "status": "wrong"
+   },
+   "qwen3_8b": {
+    "out": "D) Bayburt",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "C) Amasya",
+    "status": "wrong"
+   }
+  }
+ },
+ {
+  "cat": "dogum",
+  "prompt": "Zeki Müren hangi yıl doğmuştur?\nA) 1942\nB) 1938\nC) 1922\nD) 1931",
+  "answer": "D",
+  "choices": [
+   "1942",
+   "1938",
+   "1922",
+   "1931"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "D) 1931",
+    "status": "correct"
+   },
+   "gemma3_4b": {
+    "out": "B",
+    "status": "wrong"
+   },
+   "qwen3_8b": {
+    "out": "B) 1938",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "B) 1938",
+    "status": "wrong"
+   }
+  }
+ },
+ {
+  "cat": "dogum",
+  "prompt": "Hakan Yakın hangi yıl doğmuştur?\nA) 1987\nB) 1975\nC) 1977\nD) 1971",
+  "answer": "C",
+  "choices": [
+   "1987",
+   "1975",
+   "1977",
+   "1971"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A) 1987",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "C",
+    "status": "correct"
+   },
+   "qwen3_8b": {
+    "out": "C) 1977",
+    "status": "correct"
+   },
+   "llama3.2_3b": {
+    "out": "Cevap C",
+    "status": "correct"
+   }
+  }
+ },
+ {
+  "cat": "dogum",
+  "prompt": "Vahide Perçin hangi yıl doğmuştur?\nA) 1974\nB) 1954\nC) 1965\nD) 1967",
+  "answer": "C",
+  "choices": [
+   "1974",
+   "1954",
+   "1965",
+   "1967"
+  ],
+  "models": {
+   "qwen3_14b": {
+    "out": "A",
+    "status": "wrong"
+   },
+   "gemma3_4b": {
+    "out": "B",
+    "status": "wrong"
+   },
+   "qwen3_8b": {
+    "out": "D) 1967",
+    "status": "wrong"
+   },
+   "llama3.2_3b": {
+    "out": "D) 1967",
+    "status": "wrong"
+   }
+  }
+ }
+]
