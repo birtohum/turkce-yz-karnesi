@@ -24,7 +24,7 @@ Yapay zekâ modelleri Türkiye'ye özgü bilgileri ne kadar biliyor? Bu depo, Wi
 
 - **Uçurum:** Meta'nın altı modeli %97,7–98,6 aralığında; yerel en iyi model %49. Büyük modeller arasındaki farklar 1 puanın altında, bu set artık onları ayırt etmiyor.
 - Meta modellerinin hatalarının önemli kısmı göl kategorisinde ve elle bakılanların bir bölümü Wikidata'daki hatalı/belirsiz kayıtlar (sitede “Tartışmalı sorular”).
-- Konum yanlılığı küçük modellerde büyük: Qwen3 14B dört şıklı sorularda doğru cevap A iken %77, B/C/D iken %21–27 başarılı. Meta modellerinde her harfte %96–100; ikinci tekrarda yanıtların %99'u aynı.
+- Konum yanlılığı küçük modellerde büyük: Qwen3 14B dört şıklı sorularda doğru cevap A iken %77, B/C/D iken %21–27 başarılı. Meta modellerinde her harfte %96–100; aynı soru başka ifadeyle yeniden sorulunca ikisini de doğru bilme oranı %98–99.
 - Tohum 8B ve Tohum 14B v2 (önceki bir projede Qwen3 üzerine yapılmış ince ayarlar) yanıtların %45 ve %96'sında harf yerine yeni bir soru ürettiği için sıralamaya alınmadı; ham yanıtları `results/public_raw/` içinde.
 - Meta API harcaması: 35,37 $ (29.031 istek; her model iki kez).
 

@@ -28,7 +28,7 @@
       <li><b>Uçurum var.</b> Meta'nın API modelleri soruların %98'ini biliyor; bu bilgisayarda çalışan en iyi açık model (Qwen3 14B) yarısını, rastgele tahmin üçte birini bilirdi. Arada kademe yok.</li>
       <li><b>Büyük modeller arasında fark yok denecek kadar az.</b> Altı Meta modelinin hepsi %97,7 ile %98,6 arasında. En iyi ikisi (Muse Wonder 1.0, Muse Spark 1.1) diğerlerinden 1 puandan az önde; ucuz “contributor” katmanı tam sürümle aynı puanı alıyor. Bu sorular artık büyük modelleri ayırt etmiyor.</li>
       <li><b>Kalan hataların çoğu soruda.</b> Meta modellerinin en çok yanıldığı kategori göller (%87–93). Elle bakınca bu yanlışların bir kısmı Wikidata'daki hatalı ya da belirsiz kayıtlar çıktı: aşağıdaki “Tartışmalı sorular”a bakın.</li>
-      <li><b>Küçük modeller bilmiyor, tahmin ediyor.</b> Qwen3 14B dört şıklı sorularda doğru cevap A iken %77, başka bir harfteyken %21–27 başarılı. Meta modellerinde şık sırası fark etmiyor (her harfte %96–100) ve aynı soruyu ikinci kez sorunca yanıtların %99'u aynı.</li>
+      <li><b>Küçük modeller bilmiyor, tahmin ediyor.</b> Qwen3 14B dört şıklı sorularda doğru cevap A iken %77, başka bir harfteyken %21–27 başarılı. Meta modellerinde şık sırası fark etmiyor (her harfte %96–100) ve aynı soru başka bir ifadeyle yeniden sorulunca ikisini de doğru bilme oranı %98–99.</li>
       <li><b>Yerelde büyük model her yerde kazanmıyor.</b> İlçe sorularında 4 milyar parametreli Gemma 3 (%60), 14 milyarlık Qwen3'ü (%47) geçiyor.</li>
     </ul>
   </section>
@@ -52,7 +52,7 @@
 
   <section id="saglamlik">
     <h2>Sağlamlık kontrolleri</h2>
-    <p class="note">Her soru iki kez soruldu: ikinci seferde farklı bir ifadeyle (nüfus ve rakımda ters soruyla: “hangisi daha az / daha alçak”) ve doğru seçenek başka bir konumda.</p>
+    <p class="note">Her soru iki kez soruldu: ikinci seferde farklı bir ifadeyle (nüfus ve rakımda ters soruyla: “hangisi daha az / daha alçak”) ve doğru seçenek başka bir konumda. Nüfus sorularında Wikidata'daki son değer kullanıldı; 246 sorunun 67'sinde iki ilin değeri farklı yıllardan. Bağımsız denetimde 246 cevabın hepsi TÜİK 2025 ile tutuyor.</p>
     <div class="tablewrap"><table id="robust"></table></div>
     <ul class="note" id="robustnotes"></ul>
   </section>
